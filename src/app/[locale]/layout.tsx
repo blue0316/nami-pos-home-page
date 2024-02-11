@@ -1,4 +1,5 @@
 import '@/styles/globals.css';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
@@ -36,6 +37,7 @@ export default function LocaleLayout({ children, params: { locale } }: Props) {
     <html lang={locale}>
       <body className={inter.className}>
         <Suspense fallback={<Loading />}>{children}</Suspense>
+        <SpeedInsights />
       </body>
     </html>
   );
