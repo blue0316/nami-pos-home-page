@@ -17,6 +17,7 @@ import {
 import React from 'react';
 import { IconLogo } from '@/components/icons';
 import { cn } from '@/lib/utils';
+import { usePathname } from '@/navigation';
 
 const menuItems = [
   'About',
@@ -31,6 +32,7 @@ const menuItems = [
 
 export const MainNavbar = (props: NavbarProps) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const currentPathName = usePathname();
 
   return (
     <Navbar
@@ -42,11 +44,15 @@ export const MainNavbar = (props: NavbarProps) => {
         wrapper: 'w-full justify-center',
         item: 'hidden md:flex',
       }}
-      height="60px"
+      height="72px"
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
       maxWidth="xl"
     >
+      <NavbarContent className="md:hidden" justify="start">
+        <NavbarMenuToggle className="text-foreground" />
+      </NavbarContent>
+
       {/* Left Content */}
       <NavbarBrand className="cursor-pointer">
         <Link href="/">
@@ -56,18 +62,18 @@ export const MainNavbar = (props: NavbarProps) => {
 
       {/* Center Content */}
       <NavbarContent justify="center">
-        <NavbarItem>
-          <Link className="text-default-500" href="#" size="sm">
+        <NavbarItem isActive={currentPathName === '/'}>
+          <Link className="text-default-500" href="/" size="sm">
             Home
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className="text-default-500" href="#" size="sm">
+          <Link className="text-default-500" href="/home" size="sm">
             Features
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
-          <Link aria-current="page" color="foreground" href="#" size="sm">
+        <NavbarItem>
+          <Link className="text-default-500" href="#" size="sm">
             Customers
           </Link>
         </NavbarItem>
@@ -84,24 +90,22 @@ export const MainNavbar = (props: NavbarProps) => {
       </NavbarContent>
 
       {/* Right Content */}
-      <NavbarContent className="hidden md:flex" justify="end">
+      <NavbarContent justify="end">
         <NavbarItem className="ml-2 !flex gap-2">
-          <Button className="text-default-500" radius="full" variant="light">
-            Login
+          <Button className="text-default-500" variant="solid">
+            en
           </Button>
           <Button
-            className="bg-foreground font-medium text-background"
-            color="secondary"
+            color="primary"
             endContent={<Icon icon="solar:alt-arrow-right-linear" />}
             radius="full"
-            variant="flat"
+            variant="solid"
+            size="md"
           >
-            Get Started
+            Store Login
           </Button>
         </NavbarItem>
       </NavbarContent>
-
-      <NavbarMenuToggle className="text-default-400 md:hidden" />
 
       <NavbarMenu
         className="top-[calc(var(--navbar-height)_-_1px)] max-h-fit bg-default-200/50 py-6 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50"
