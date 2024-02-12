@@ -5,6 +5,10 @@ import type { NavbarProps } from '@nextui-org/react';
 import {
   Button,
   Divider,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
   Link,
   Navbar,
   NavbarBrand,
@@ -30,6 +34,25 @@ const menuItems = [
   'Contact Us',
 ];
 
+const items = [
+  {
+    key: 'en',
+    label: 'english',
+  },
+  {
+    key: 'ja',
+    label: 'japanese',
+  },
+  {
+    key: 'ch',
+    label: 'chinese',
+  },
+  {
+    key: 'ko',
+    label: 'korean',
+  },
+];
+
 export const MainNavbar = (props: NavbarProps) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const currentPathName = usePathname();
@@ -49,9 +72,7 @@ export const MainNavbar = (props: NavbarProps) => {
       onMenuOpenChange={setIsMenuOpen}
       maxWidth="xl"
     >
-      <NavbarContent className="md:hidden" justify="start">
-        <NavbarMenuToggle className="text-foreground" />
-      </NavbarContent>
+      <NavbarMenuToggle className="md:hidden" />
 
       {/* Left Content */}
       <NavbarBrand className="cursor-pointer">
@@ -92,14 +113,30 @@ export const MainNavbar = (props: NavbarProps) => {
       {/* Right Content */}
       <NavbarContent justify="end">
         <NavbarItem className="ml-2 !flex gap-2">
-          <Button className="text-default-500" variant="solid">
-            en
-          </Button>
+          {/*ToDo:- add-Icons Translate dropdown */}
+          <Dropdown backdrop="blur" placement="bottom-start">
+            <DropdownTrigger>
+              <Button
+                isIconOnly
+                startContent={<Icon icon="material-symbols:translate" className="size-6" />}
+                className="bg-default-100 p-0"
+              />
+            </DropdownTrigger>
+            <DropdownMenu aria-label="language-selection" items={items}>
+              {(item) => (
+                <DropdownItem
+                  key={item.key}
+                  color={item.key === 'delete' ? 'danger' : 'default'}
+                  className={item.key === 'delete' ? 'text-danger' : ''}
+                >
+                  {item.label}
+                </DropdownItem>
+              )}
+            </DropdownMenu>
+          </Dropdown>
           <Button
-            color="primary"
-            endContent={<Icon icon="solar:alt-arrow-right-linear" />}
-            radius="full"
-            variant="solid"
+            variant="bordered"
+            startContent={<Icon icon="solar:login-linear" className="size-6" />}
             size="md"
           >
             Store Login
@@ -119,16 +156,6 @@ export const MainNavbar = (props: NavbarProps) => {
           },
         }}
       >
-        <NavbarMenuItem>
-          <Button fullWidth as={Link} href="/#" variant="faded">
-            Sign In
-          </Button>
-        </NavbarMenuItem>
-        <NavbarMenuItem className="mb-4">
-          <Button fullWidth as={Link} className="bg-foreground text-background" href="/#">
-            Get Started
-          </Button>
-        </NavbarMenuItem>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link className="mb-2 w-full text-default-500" href="#" size="md">

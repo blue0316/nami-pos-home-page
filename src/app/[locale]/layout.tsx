@@ -38,7 +38,7 @@ export default function LocaleLayout({ children, params: { locale } }: Props) {
   unstable_setRequestLocale(locale);
   return (
     // change the default theme option
-    <html lang={locale} className="orange-light">
+    <html lang={locale}>
       <body className={cn(inter.className)}>
         <RootProvider>
           <Suspense fallback={<Loading />}>
