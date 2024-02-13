@@ -1,6 +1,7 @@
 import { Pathnames } from 'next-intl/navigation';
 import { locales } from '@/i18n';
 
+// ToDo:- #9 Create-localized-pathName https://next-intl-docs.vercel.app/docs/routing/middleware#localizing-pathnames
 export const pathnames = {
   '/': '/',
   '/ourProduct': {

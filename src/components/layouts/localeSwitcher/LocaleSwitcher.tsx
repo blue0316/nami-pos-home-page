@@ -6,6 +6,7 @@ import { usePathname, useRouter } from '@/navigation';
 
 export const LocaleSwitcher = () => {
   const locale = useLocale();
+  console.log('THis is locale', locale);
   const [selectedLocale, setSelectedLocale] = useState(locale);
   const [isPending, startTransition] = useTransition();
   const t = useTranslations('LocaleOptions');

@@ -3,6 +3,7 @@
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
+// ToDo-:- 5 theme-switcher
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();

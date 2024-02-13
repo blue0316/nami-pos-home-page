@@ -5,7 +5,6 @@ import type { NavbarProps } from '@nextui-org/react';
 import {
   Button,
   Divider,
-  Link,
   Navbar,
   NavbarBrand,
   NavbarContent,
@@ -19,7 +18,7 @@ import React from 'react';
 import { IconLogo } from '@/components/icons';
 import { LocaleSwitcher } from '@/components/layouts/localeSwitcher';
 import { cn } from '@/lib/utils';
-import { usePathname } from '@/navigation';
+import { Link, usePathname } from '@/navigation';
 
 export const MainNavbar = (props: NavbarProps) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -53,22 +52,22 @@ export const MainNavbar = (props: NavbarProps) => {
       {/* Center Content */}
       <NavbarContent justify="center">
         <NavbarItem isActive={currentPathName === '/ourProduct'}>
-          <Link className="text-default-600" href="/ourProduct" size="sm">
+          <Link className="text-default-600" href="/ourProduct">
             {t('ourProduct')}
           </Link>
         </NavbarItem>
         <NavbarItem isActive={currentPathName === '/equipments'}>
-          <Link className="text-default-600" href="/equipments" size="sm">
+          <Link className="text-default-600" href="/equipments">
             {t('equipments')}
           </Link>
         </NavbarItem>
         <NavbarItem isActive={currentPathName === '/pricing'}>
-          <Link className="text-default-600" href="/pricing" size="sm">
+          <Link className="text-default-600" href="/pricing">
             {t('pricing')}
           </Link>
         </NavbarItem>
         <NavbarItem isActive={currentPathName === '/contactUs'}>
-          <Link className="text-default-600" href="/contactUs" size="sm">
+          <Link className="text-default-600" href="/contactUs">
             {t('contactUs')}
           </Link>
         </NavbarItem>
@@ -104,7 +103,6 @@ export const MainNavbar = (props: NavbarProps) => {
           <Link
             className="text-default-600"
             href="/ourProduct"
-            size="sm"
             onClick={() => setIsMenuOpen(false)}
           >
             {t('ourProduct')}
@@ -115,7 +113,6 @@ export const MainNavbar = (props: NavbarProps) => {
           <Link
             className="text-default-600"
             href="/equipments"
-            size="sm"
             onClick={() => setIsMenuOpen(false)}
           >
             {t('equipments')}
@@ -123,24 +120,14 @@ export const MainNavbar = (props: NavbarProps) => {
         </NavbarMenuItem>
         <Divider />
         <NavbarMenuItem isActive={currentPathName === '/pricing'}>
-          <Link
-            className="text-default-600"
-            href="/pricing"
-            size="sm"
-            onClick={() => setIsMenuOpen(false)}
-          >
+          <Link className="text-default-600" href="/pricing" onClick={() => setIsMenuOpen(false)}>
             {t('pricing')}
           </Link>
         </NavbarMenuItem>
         <Divider />
 
         <NavbarMenuItem isActive={currentPathName === '/contactUs'}>
-          <Link
-            className="text-default-600"
-            href="/contactUs"
-            size="sm"
-            onClick={() => setIsMenuOpen(false)}
-          >
+          <Link className="text-default-600" href="/contactUs" onClick={() => setIsMenuOpen(false)}>
             {t('contactUs')}
           </Link>
         </NavbarMenuItem>
