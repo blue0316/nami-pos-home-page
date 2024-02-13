@@ -18,6 +18,11 @@
     "pricing":"Pricing",
     "contactUs":"Contact Us",
     "storeLogin":"Store Login"
-    
+  },  
+  
+  "LocaleOptions":{
+    "en":"English",
+    "ja":"Japanese"
   }
+
 }

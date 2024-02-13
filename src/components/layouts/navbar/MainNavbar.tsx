@@ -4,10 +4,7 @@ import { Icon } from '@iconify/react';
 import type { NavbarProps } from '@nextui-org/react';
 import {
   Button,
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownTrigger,
+  Divider,
   Link,
   Navbar,
   NavbarBrand,
@@ -20,27 +17,9 @@ import {
 import { useTranslations } from 'next-intl';
 import React from 'react';
 import { IconLogo } from '@/components/icons';
+import { LocaleSwitcher } from '@/components/layouts/localeSwitcher';
 import { cn } from '@/lib/utils';
 import { usePathname } from '@/navigation';
-
-const items = [
-  {
-    key: 'en',
-    label: 'english',
-  },
-  {
-    key: 'ja',
-    label: 'japanese',
-  },
-  {
-    key: 'ch',
-    label: 'chinese',
-  },
-  {
-    key: 'ko',
-    label: 'korean',
-  },
-];
 
 export const MainNavbar = (props: NavbarProps) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -51,8 +30,8 @@ export const MainNavbar = (props: NavbarProps) => {
     <Navbar
       {...props}
       classNames={{
-        base: cn('border-default-100', {
-          'bg-default-200/50 dark:bg-default-100/50': isMenuOpen,
+        base: cn('border-default-100 ', {
+          'bg-default-200/50 dark:bg-default-100/50 ': isMenuOpen,
         }),
         wrapper: 'w-full justify-center',
         item: 'hidden md:flex',
@@ -98,27 +77,7 @@ export const MainNavbar = (props: NavbarProps) => {
       {/* Right Content */}
       <NavbarContent justify="end">
         <NavbarItem className="ml-2 !flex gap-2">
-          {/*ToDo:- add-Icons Translate dropdown */}
-          <Dropdown backdrop="blur" placement="bottom-start">
-            <DropdownTrigger>
-              <Button
-                isIconOnly
-                startContent={<Icon icon="material-symbols:translate" className="size-6" />}
-                className="bg-default-100 p-0"
-              />
-            </DropdownTrigger>
-            <DropdownMenu aria-label="language-selection" items={items}>
-              {(item) => (
-                <DropdownItem
-                  key={item.key}
-                  color={item.key === 'delete' ? 'danger' : 'default'}
-                  className={item.key === 'delete' ? 'text-danger' : ''}
-                >
-                  {item.label}
-                </DropdownItem>
-              )}
-            </DropdownMenu>
-          </Dropdown>
+          <LocaleSwitcher />
           <Button
             variant="bordered"
             startContent={<Icon icon="solar:login-linear" className="size-6" />}
@@ -130,7 +89,7 @@ export const MainNavbar = (props: NavbarProps) => {
       </NavbarContent>
 
       <NavbarMenu
-        className="top-[calc(var(--navbar-height)_-_1px)] max-h-fit bg-default-200/50 py-6 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50"
+        className=" h-screen bg-default-200/50 py-6 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50"
         motionProps={{
           initial: { opacity: 0, y: -20 },
           animate: { opacity: 1, y: 0 },
@@ -151,6 +110,7 @@ export const MainNavbar = (props: NavbarProps) => {
             {t('ourProduct')}
           </Link>
         </NavbarMenuItem>
+        <Divider />
         <NavbarMenuItem isActive={currentPathName === '/equipments'}>
           <Link
             className="text-default-600"
@@ -161,6 +121,7 @@ export const MainNavbar = (props: NavbarProps) => {
             {t('equipments')}
           </Link>
         </NavbarMenuItem>
+        <Divider />
         <NavbarMenuItem isActive={currentPathName === '/pricing'}>
           <Link
             className="text-default-600"
@@ -171,6 +132,8 @@ export const MainNavbar = (props: NavbarProps) => {
             {t('pricing')}
           </Link>
         </NavbarMenuItem>
+        <Divider />
+
         <NavbarMenuItem isActive={currentPathName === '/contactUs'}>
           <Link
             className="text-default-600"

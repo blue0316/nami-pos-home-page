@@ -18,8 +18,12 @@
     "pricing":"料金プラン",
     "contactUs":"お問い合わせ",
     "storeLogin":"店舗ログイン"
-  }
+  },
 
+  "LocaleOptions":{
+    "en":"英語",
+    "ja":"日本語"
+  }
 
 }
 
