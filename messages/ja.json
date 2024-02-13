@@ -13,8 +13,11 @@
   },
 
   "Navigation": {
-    "home": "ホーム",
-    "pathnames": "パス名"
+    "ourProduct": "およそ",
+    "equipments": "周辺機器",
+    "pricing":"料金プラン",
+    "contactUs":"お問い合わせ",
+    "storeLogin":"店舗ログイン"
   }
 
 
