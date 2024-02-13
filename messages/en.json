@@ -13,7 +13,11 @@
   },
 
   "Navigation": {
-    "home": "Home",
-    "pathnames": "Pathnames"
+    "ourProduct": "Our Product",
+    "equipments": "Equipments",
+    "pricing":"Pricing",
+    "contactUs":"Contact Us",
+    "storeLogin":"Store Login"
+    
   }
 }

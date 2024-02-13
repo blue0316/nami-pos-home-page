@@ -4,7 +4,6 @@ import { Icon } from '@iconify/react';
 import type { NavbarProps } from '@nextui-org/react';
 import {
   Button,
-  Divider,
   Dropdown,
   DropdownItem,
   DropdownMenu,
@@ -18,21 +17,11 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@nextui-org/react';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 import { IconLogo } from '@/components/icons';
 import { cn } from '@/lib/utils';
 import { usePathname } from '@/navigation';
-
-const menuItems = [
-  'About',
-  'Blog',
-  'Customers',
-  'Pricing',
-  'Enterprise',
-  'Changelog',
-  'Documentation',
-  'Contact Us',
-];
 
 const items = [
   {
@@ -56,6 +45,7 @@ const items = [
 export const MainNavbar = (props: NavbarProps) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const currentPathName = usePathname();
+  const t = useTranslations('Navigation');
 
   return (
     <Navbar
@@ -76,36 +66,31 @@ export const MainNavbar = (props: NavbarProps) => {
 
       {/* Left Content */}
       <NavbarBrand className="cursor-pointer">
-        <Link href="/">
+        <Link href="/" onClick={() => setIsMenuOpen(false)}>
           <IconLogo />
         </Link>
       </NavbarBrand>
 
       {/* Center Content */}
       <NavbarContent justify="center">
-        <NavbarItem isActive={currentPathName === '/'}>
-          <Link className="text-default-500" href="/" size="sm">
-            Home
+        <NavbarItem isActive={currentPathName === '/ourProduct'}>
+          <Link className="text-default-600" href="/ourProduct" size="sm">
+            {t('ourProduct')}
           </Link>
         </NavbarItem>
-        <NavbarItem>
-          <Link className="text-default-500" href="/home" size="sm">
-            Features
+        <NavbarItem isActive={currentPathName === '/equipments'}>
+          <Link className="text-default-600" href="/equipments" size="sm">
+            {t('equipments')}
           </Link>
         </NavbarItem>
-        <NavbarItem>
-          <Link className="text-default-500" href="#" size="sm">
-            Customers
+        <NavbarItem isActive={currentPathName === '/pricing'}>
+          <Link className="text-default-600" href="/pricing" size="sm">
+            {t('pricing')}
           </Link>
         </NavbarItem>
-        <NavbarItem>
-          <Link className="text-default-500" href="#" size="sm">
-            About Us
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className="text-default-500" href="#" size="sm">
-            Integrations
+        <NavbarItem isActive={currentPathName === '/contactUs'}>
+          <Link className="text-default-600" href="/contactUs" size="sm">
+            {t('contactUs')}
           </Link>
         </NavbarItem>
       </NavbarContent>
@@ -139,7 +124,7 @@ export const MainNavbar = (props: NavbarProps) => {
             startContent={<Icon icon="solar:login-linear" className="size-6" />}
             size="md"
           >
-            Store Login
+            {t('storeLogin')}
           </Button>
         </NavbarItem>
       </NavbarContent>
@@ -156,14 +141,46 @@ export const MainNavbar = (props: NavbarProps) => {
           },
         }}
       >
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link className="mb-2 w-full text-default-500" href="#" size="md">
-              {item}
-            </Link>
-            {index < menuItems.length - 1 && <Divider className="opacity-50" />}
-          </NavbarMenuItem>
-        ))}
+        <NavbarMenuItem isActive={currentPathName === '/ourProduct'}>
+          <Link
+            className="text-default-600"
+            href="/ourProduct"
+            size="sm"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {t('ourProduct')}
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem isActive={currentPathName === '/equipments'}>
+          <Link
+            className="text-default-600"
+            href="/equipments"
+            size="sm"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {t('equipments')}
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem isActive={currentPathName === '/pricing'}>
+          <Link
+            className="text-default-600"
+            href="/pricing"
+            size="sm"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {t('pricing')}
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem isActive={currentPathName === '/contactUs'}>
+          <Link
+            className="text-default-600"
+            href="/contactUs"
+            size="sm"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {t('contactUs')}
+          </Link>
+        </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
   );
