@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
+import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import React, { ReactNode, Suspense } from 'react';
 import Loading from '@/app/[locale]/loading';
@@ -36,15 +37,18 @@ export default function LocaleLayout({ children, params: { locale } }: Props) {
 
   // Enable static rendering
   unstable_setRequestLocale(locale);
+  const message = useMessages();
   return (
     // change the default theme option
     <html lang={locale}>
       <body className={cn(inter.className)}>
         <RootProvider>
-          <Suspense fallback={<Loading />}>
-            <MainNavbar />
-            {children}
-          </Suspense>
+          <NextIntlClientProvider messages={message}>
+            <Suspense fallback={<Loading />}>
+              <MainNavbar />
+              {children}
+            </Suspense>
+          </NextIntlClientProvider>
         </RootProvider>
         <SpeedInsights />
       </body>
