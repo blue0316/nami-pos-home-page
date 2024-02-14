@@ -21,7 +21,7 @@ const config = {
       keyframes: {
         'scrolling-banner': {
           from: { transform: 'translateX(0)' },
-          to: { transform: 'translateX(calc(-50% - var(--gap)/2))' },
+          to: { transform: 'translateX(calc(-30% - var(--gap)/2))' },
         },
         'scrolling-banner-vertical': {
           from: { transform: 'translateY(0)' },
