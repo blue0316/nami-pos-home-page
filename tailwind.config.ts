@@ -13,7 +13,7 @@ const config = {
 
       lg: '1024px',
 
-      xl: '1128px',
+      xl: '1280px',
 
       '2xl': '1536px',
     },

@@ -1,6 +1,6 @@
 import '@/styles/globals.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Inter } from 'next/font/google';
+import { Noto_Sans_JP } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
@@ -11,7 +11,9 @@ import { locales } from '@/i18n';
 import { cn } from '@/lib/utils';
 import { RootProvider } from '@/provider/RootProvider';
 
-const inter = Inter({ subsets: ['latin'] });
+const notoJp = Noto_Sans_JP({
+  subsets: ['latin'],
+});
 
 type Props = {
   children: ReactNode;
@@ -42,7 +44,7 @@ export default function LocaleLayout({ children, params: { locale } }: Props) {
   return (
     // change the default theme option
     <html lang={locale}>
-      <body className={cn(inter.className)}>
+      <body className={cn(notoJp.className)}>
         <RootProvider>
           <NextIntlClientProvider messages={message}>
             <Suspense fallback={<Loading />}>

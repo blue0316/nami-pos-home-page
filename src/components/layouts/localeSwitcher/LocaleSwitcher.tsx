@@ -1,3 +1,5 @@
+'use client';
+
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@nextui-org/react';
 import { useLocale, useTranslations } from 'next-intl';
