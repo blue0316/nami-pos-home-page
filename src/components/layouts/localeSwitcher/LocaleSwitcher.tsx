@@ -6,7 +6,6 @@ import { usePathname, useRouter } from '@/navigation';
 
 export const LocaleSwitcher = () => {
   const locale = useLocale();
-  console.log('THis is locale', locale);
   const [selectedLocale, setSelectedLocale] = useState(locale);
   const [isPending, startTransition] = useTransition();
   const t = useTranslations('LocaleOptions');
@@ -28,7 +27,7 @@ export const LocaleSwitcher = () => {
   return (
     <Dropdown backdrop="blur" placement="bottom-start" isDisabled={isPending} closeOnSelect>
       <DropdownTrigger>
-        <Button variant="shadow" isIconOnly className="bg-default-100 p-0">
+        <Button name="languageTranslate" variant="shadow" isIconOnly className="bg-default-100 p-0">
           <Icon icon="material-symbols:translate" className="size-6" />
         </Button>
       </DropdownTrigger>

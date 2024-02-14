@@ -8,8 +8,9 @@
     "description": "<p>The pathnames are internationalized too.</p><p>If you're using the default language English, you'll see <code>/en/pathnames</code> in the browser address bar on this page.</p><p>If you change the locale to German, the URL is localized accordingly (<code>/de/pfadnamen</code>).</p>"
   },
 
-  "LocaleLayout": {
-    "title": "namiPOS"
+  "Site": {
+    "title": "namiPOS",
+    "description": "namiPOS is a point of sale system that is designed to be used by small to medium businesses. It is a web-based application that can be accessed from any device with a web browser. It is designed to be simple and easy to use, while still providing all the features that a business needs to manage their sales and inventory."
   },
 
   "Navigation": {
