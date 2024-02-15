@@ -1,5 +1,8 @@
+import Image from 'next/image';
 import { unstable_setRequestLocale } from 'next-intl/server';
+import LGHEROIMAGE from '@/assets/lgHeroSection.png';
 import {
+  AppleAndroidButton,
   Logo1,
   Logo10,
   Logo2,
@@ -77,8 +80,18 @@ export default function Home({ params: { locale } }: Props) {
           in One Place.
           <ThemeSwitcher />
         </p>
+
+        <AppleAndroidButton className="mt-10 flex justify-center gap-6" />
       </div>
-      <section className="mx-auto w-full max-w-screen-2xl px-6 py-20 sm:py-32 lg:px-8 lg:py-40">
+
+      <div className="mx-auto mt-10 flex max-w-screen-xl justify-center px-3 py-1.5">
+        <Image src={LGHEROIMAGE} alt={'heroSectionImage'} />
+      </div>
+
+      <section className="mx-auto w-full max-w-screen-2xl px-3 py-14 md:py-20">
+        <p className="mb-10 text-center text-xl font-bold lg:mb-16  lg:text-2xl">
+          Trusted by Innovational Industry Leaders
+        </p>
         <SponsorsScrollingBanner shouldPauseOnHover gap="40px">
           {logos.map(({ key, logo }) => (
             <div key={key} className="flex items-center justify-center text-foreground">

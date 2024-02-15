@@ -93,7 +93,7 @@ const config = {
               700: '#3F3F46',
               800: '#27272A',
               900: '#18181B',
-              foreground: '#11181C',
+              // foreground: '#11181C',
               DEFAULT: '#D4D4D8',
             },
             primary: {
