@@ -2,16 +2,18 @@
 
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { Button, Link } from '@nextui-org/react';
+import { motion, MotionStyle } from 'framer-motion';
 import React from 'react';
 import { PlayStoreLogo } from './PlayStoreLogo';
 
 type Props = {
   className?: string;
+  style?: MotionStyle;
 };
 
-export const AppleAndroidButton = ({ className }: Props) => {
+export const AppleAndroidButton = ({ className, style }: Props) => {
   return (
-    <div className={className}>
+    <motion.div style={style} className={className}>
       <Button
         href="https://www.apple.com/app-store/"
         isExternal
@@ -33,6 +35,6 @@ export const AppleAndroidButton = ({ className }: Props) => {
       >
         Google Play
       </Button>
-    </div>
+    </motion.div>
   );
 };

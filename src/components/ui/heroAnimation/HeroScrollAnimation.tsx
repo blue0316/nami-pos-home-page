@@ -104,7 +104,13 @@ export const HeroScrollAnimation = () => {
           <ThemeSwitcher />
         </motion.p>
 
-        <AppleAndroidButton className="mt-10 flex justify-center gap-6" />
+        <AppleAndroidButton
+          style={{
+            opacity: isInView ? 1 : 0,
+            transition: 'opacity 3s ease-in-out 1s',
+          }}
+          className="mt-10 flex justify-center gap-6"
+        />
       </motion.div>
 
       <motion.div
