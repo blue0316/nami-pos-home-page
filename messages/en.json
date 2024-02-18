@@ -20,7 +20,14 @@
     "contactUs":"Contact Us",
     "storeLogin":"Store Login"
   },  
-  
+
+  "StarterPack":{
+    "monthlyFree":"is free per month",
+    "initialCost":"Initial Cost",
+    "monthlyCost":"Monthly Cost",
+    "startForFree":"Get Started for Free"
+  },
+
   "LocaleOptions":{
     "en":"English",
     "ja":"Japanese"

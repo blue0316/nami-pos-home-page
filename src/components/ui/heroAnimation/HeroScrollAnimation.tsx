@@ -19,6 +19,7 @@ import {
   Logo9,
 } from '@/components/icons';
 import { ThemeSwitcher } from '@/components/layouts/themeSwitcher';
+import { StarterPack } from '@/components/pricing/starterPack';
 import SponsorsScrollingBanner from '@/components/sponsors/SponsorsScrollingBanner';
 import { TopHeadlineUpdates } from '@/components/Updates';
 
@@ -134,6 +135,8 @@ export const HeroScrollAnimation = () => {
           ))}
         </SponsorsScrollingBanner>
       </section>
+
+      <StarterPack />
     </main>
   );
 };

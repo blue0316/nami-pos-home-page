@@ -2,9 +2,13 @@
 import { motion, stagger, useAnimate } from 'framer-motion';
 import { useEffect } from 'react';
 
-export const TextGenerateEffect = ({ words, className }: { words: string; className?: string }) => {
+type Props = {
+  words: string;
+  className?: string;
+};
+
+export const TextGenerateEffect = ({ words, className }: Props) => {
   const [scope, animate] = useAnimate();
-  console.log(words);
   useEffect(() => {
     animate(
       'span',

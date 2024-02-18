@@ -21,6 +21,15 @@
     "storeLogin":"店舗ログイン"
   },
 
+
+  "StarterPack":{
+    "monthlyFree":"月額無料",
+    "initialCost":"初期費用",
+    "monthlyCost":"月額費用",
+    "startForFree":"無料で始めましょう"
+  },
+
+
   "LocaleOptions":{
     "en":"英語",
     "ja":"日本語"
