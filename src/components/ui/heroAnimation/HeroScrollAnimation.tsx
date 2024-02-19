@@ -6,7 +6,6 @@ import { useRef } from 'react';
 import { TextGenerateEffect } from '../textGenerateEffect';
 import LGHEROIMAGE from '@/assets/lgHeroSection.png';
 import {
-  AppleAndroidButton,
   Logo1,
   Logo10,
   Logo2,
@@ -18,10 +17,9 @@ import {
   Logo8,
   Logo9,
 } from '@/components/icons';
+import { AppleAndroidButton } from '@/components/icons';
 import { ThemeSwitcher } from '@/components/layouts/themeSwitcher';
-import { StarterPack } from '@/components/pricing/starterPack';
 import SponsorsScrollingBanner from '@/components/sponsors/SponsorsScrollingBanner';
-import { TopHeadlineUpdates } from '@/components/Updates';
 
 const logos = [
   {
@@ -65,6 +63,7 @@ const logos = [
     logo: Logo10,
   },
 ];
+
 export const HeroScrollAnimation = () => {
   const containerRef = useRef(null);
 
@@ -72,13 +71,12 @@ export const HeroScrollAnimation = () => {
     target: containerRef,
   });
 
-  const isInView = useInView(containerRef);
+  const isInView = useInView(containerRef, { once: true });
 
   const rotate = useTransform(scrollYProgress, [0, 1], [-10, 0]);
   const translate = useTransform(scrollYProgress, [0, 1], [0, -80]);
   return (
     <main ref={containerRef}>
-      <TopHeadlineUpdates />
       <motion.div
         style={{
           translateY: translate,
@@ -113,7 +111,6 @@ export const HeroScrollAnimation = () => {
           className="mt-10 flex justify-center gap-6"
         />
       </motion.div>
-
       <motion.div
         style={{
           rotateX: rotate,
@@ -135,8 +132,6 @@ export const HeroScrollAnimation = () => {
           ))}
         </SponsorsScrollingBanner>
       </section>
-
-      <StarterPack />
     </main>
   );
 };

@@ -20,7 +20,7 @@ export const StarterPack = () => {
           opacity: view ? 1 : 0,
           transition: 'opacity 3s ease-in-out 0.2s',
         }}
-        className="flex flex-col justify-center text-center text-5xl font-bold sm:flex-row sm:text-6xl lg:text-7xl"
+        className="flex flex-col justify-center text-center text-4xl font-bold sm:flex-row sm:text-6xl lg:text-7xl"
       >
         Nami Basic
         <span className="text-primary">{t('monthlyFree')}</span>
