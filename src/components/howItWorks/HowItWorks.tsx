@@ -59,7 +59,7 @@ export const HowItWorks: React.FC = () => {
               <CardBody>
                 <h3 className="text-xs font-bold  text-opacity-40">STEP 1</h3>
                 <h1 className="my-3 text-xl font-bold md:text-3xl">Get Started for Free</h1>
-                <p className="text-sm font-normal leading-tight">
+                <p className="text-sm font-normal leading-tight text-content4-foreground">
                   Sign Up for free using our call to action button or Logging in via our navbar.
                 </p>
               </CardBody>
@@ -78,7 +78,7 @@ export const HowItWorks: React.FC = () => {
               <CardBody>
                 <h3 className="text-xs font-bold  text-opacity-40">STEP 2</h3>
                 <h1 className="my-3 text-xl font-bold  md:text-3xl">Create Restaurant</h1>
-                <p className="text-sm font-normal leading-tight">
+                <p className="text-sm font-normal leading-tight text-content4-foreground">
                   After getting approved, create your restaurant and set it up so that you can use
                   it later for NamiPOS app.
                 </p>
@@ -98,7 +98,7 @@ export const HowItWorks: React.FC = () => {
               <CardBody>
                 <h3 className="text-xs font-bold text-opacity-40">STEP 3</h3>
                 <h1 className="my-3 text-xl font-bold  md:text-3xl">Setup your Restaurant</h1>
-                <p className="text-sm font-normal leading-tight">
+                <p className="text-sm font-normal leading-tight text-content4-foreground">
                   Make staffs, create menus and many more using our Nami POS Manager WebApp.
                 </p>
               </CardBody>
@@ -127,7 +127,7 @@ export const HowItWorks: React.FC = () => {
               <CardBody>
                 <h3 className="text-xs font-bold text-opacity-40">STEP 1</h3>
                 <h1 className="my-3 text-xl font-bold md:text-3xl">Download the App</h1>
-                <p className="text-sm font-normal leading-tight">
+                <p className="text-sm font-normal leading-tight text-content4-foreground">
                   Download Nami Pos App from Google PlayStore or Apple Play Store
                 </p>
               </CardBody>
@@ -146,7 +146,7 @@ export const HowItWorks: React.FC = () => {
               <CardBody>
                 <h3 className="text-xs font-bold text-opacity-40">STEP 2</h3>
                 <h1 className="my-3 text-xl font-bold  md:text-3xl">Log In</h1>
-                <p className="text-sm font-normal leading-tight">
+                <p className="text-sm font-normal leading-tight text-content4-foreground">
                   Log In using the email provided through Nami POS Manager. If you haven’t already
                   registered to sign up for NamiPOS Manager and set-up first.
                 </p>
@@ -166,7 +166,7 @@ export const HowItWorks: React.FC = () => {
               <CardBody>
                 <h3 className="text-xs font-bold text-opacity-40">STEP 3</h3>
                 <h1 className="my-3 text-xl font-bold md:text-3xl">Start Using it!</h1>
-                <p className="text-sm font-normal leading-tight">
+                <p className="text-sm font-normal leading-tight text-content4-foreground">
                   Start using the Nami POS for your business and upgrade as necessary.
                 </p>
               </CardBody>

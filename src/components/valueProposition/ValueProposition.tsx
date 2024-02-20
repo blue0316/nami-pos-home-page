@@ -85,7 +85,7 @@ const ValueProposition = () => {
               {data.title}
             </motion.h2>
             <motion.p
-              className="mb-8 mt-3 text-sm font-normal sm:text-base "
+              className="mb-8 mt-3 text-sm font-normal sm:text-base md:mt-8"
               variants={itemVariants}
             >
               {data.description}

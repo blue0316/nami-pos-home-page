@@ -77,10 +77,24 @@ const config = {
             foreground: '#11181C',
             divider: '#11111126',
             focus: '#F26419',
-            content1: '#FFFFFF',
-            content2: '#F4F4F5',
-            content3: '#D4D4D8',
-            content4: '#D4D4D8',
+            content1: {
+              DEFAULT: '#FFFFFF',
+              foreground: '#11181C',
+            },
+            content2: {
+              DEFAULT: '#F4F4F5',
+              foreground: '#27272A',
+            },
+
+            content3: {
+              DEFAULT: '#D4D4D8',
+              foreground: '#3F3F46',
+            },
+
+            content4: {
+              DEFAULT: '#D4D4D8',
+              foreground: '#52525B',
+            },
 
             default: {
               50: '#FAFAFA',
@@ -175,10 +189,23 @@ const config = {
             foreground: '#ECEDEE',
             divider: '#FFFFFF26',
             focus: '#F26419',
-            content1: '#18181B',
-            content2: '#27272A',
-            content3: '#3F3F46',
-            content4: '#52525B',
+
+            content1: {
+              DEFAULT: '#18181B',
+              foreground: '#FAFAFA',
+            },
+            content2: {
+              DEFAULT: '#27272A',
+              foreground: '#F4F4F5',
+            },
+            content3: {
+              DEFAULT: '#3F3F46',
+              foreground: '#E4E4E7',
+            },
+            content4: {
+              DEFAULT: '#52525B',
+              foreground: '#D4D4D8',
+            },
 
             default: {
               50: '#18181B',
