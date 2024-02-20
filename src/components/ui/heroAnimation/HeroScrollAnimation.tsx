@@ -117,7 +117,7 @@ export const HeroScrollAnimation = () => {
         }}
         className="mx-auto flex max-w-screen-xl justify-center px-3 py-1.5"
       >
-        <Image src={LGHEROIMAGE} alt={'heroSectionImage'} />
+        <Image src={LGHEROIMAGE} width={1800} height={1000} alt={'heroSectionImage'} />
       </motion.div>
 
       <section className="mx-auto w-full max-w-screen-2xl px-3 py-14 md:py-20">

@@ -1,4 +1,5 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
+import { HowItWorks } from '@/components/howItWorks';
 import { StarterPack } from '@/components/pricing/starterPack';
 import { HeroScrollAnimation } from '@/components/ui/heroAnimation/HeroScrollAnimation';
 import { TopHeadlineUpdates } from '@/components/Updates';
@@ -18,6 +19,7 @@ export default function Home({ params: { locale } }: Props) {
       <HeroScrollAnimation />
       <StarterPack />
       <ValueProposition />
+      <HowItWorks />
     </main>
   );
 }

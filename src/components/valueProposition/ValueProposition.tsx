@@ -37,7 +37,7 @@ const whyUsData = [
 const ValueProposition = () => {
   const containerRef = useRef(null);
 
-  const view = useInView(containerRef);
+  const view = useInView(containerRef, { once: true });
 
   const containerVariants = {
     hidden: { opacity: 0 },
