@@ -73,7 +73,7 @@ const config = {
       themes: {
         light: {
           colors: {
-            background: '#FFFFFF',
+            background: '#FAFAFA',
             foreground: '#11181C',
             divider: '#11111126',
             focus: '#F26419',
