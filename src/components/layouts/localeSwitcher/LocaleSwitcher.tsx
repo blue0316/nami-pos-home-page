@@ -29,7 +29,13 @@ export const LocaleSwitcher = () => {
   return (
     <Dropdown backdrop="blur" placement="bottom-start" isDisabled={isPending} closeOnSelect>
       <DropdownTrigger>
-        <Button name="languageTranslate" variant="shadow" isIconOnly className="bg-default-100 p-0">
+        <Button
+          aria-label="languageTranslate"
+          name="languageTranslate"
+          variant="shadow"
+          isIconOnly
+          className="bg-default-100 p-0"
+        >
           <Icon icon="material-symbols:translate" className="size-6" />
         </Button>
       </DropdownTrigger>

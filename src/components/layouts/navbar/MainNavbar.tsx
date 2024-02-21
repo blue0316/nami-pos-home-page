@@ -78,6 +78,8 @@ export const MainNavbar = (props: NavbarProps) => {
         <NavbarItem className="ml-2 !flex gap-2">
           <LocaleSwitcher />
           <Button
+            as={Link}
+            href="https://pos-manager-bice.vercel.app/login"
             variant="bordered"
             startContent={<Icon icon="solar:login-linear" className="size-6" />}
             size="md"
