@@ -1,12 +1,14 @@
 import '@/styles/globals.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Noto_Sans_JP } from 'next/font/google';
+import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import React, { ReactNode, Suspense } from 'react';
 import Loading from '@/app/[locale]/loading';
 import { MainNavbar } from '@/components/layouts';
+import LiveVisualEditing from '@/components/sanity/LiveVisualEditing';
 import { locales } from '@/i18n';
 import { cn } from '@/lib/utils';
 import { RootProvider } from '@/provider/RootProvider';
@@ -50,6 +52,7 @@ export default function LocaleLayout({ children, params: { locale } }: Props) {
             <Suspense fallback={<Loading />}>
               <MainNavbar />
               {children}
+              {draftMode().isEnabled && <LiveVisualEditing />}
             </Suspense>
           </NextIntlClientProvider>
         </RootProvider>

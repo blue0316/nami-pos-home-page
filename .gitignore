@@ -38,3 +38,4 @@ next-env.d.ts
 # sanity
 /sanitynamipos/.sanity
 /sanitynamipos/node_modules
+/.sanity
